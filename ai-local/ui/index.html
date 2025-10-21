@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Local Assistant</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Assistant local</h1>
+        <div class="header__controls">
+          <label class="toggle">
+            <input type="checkbox" id="web-toggle" checked />
+            <span>Autoriser la recherche web</span>
+          </label>
+          <button id="upload-btn" class="btn">Ajouter des documents</button>
+          <input
+            type="file"
+            id="file-input"
+            accept=".pdf,.md,.txt"
+            multiple
+            hidden
+          />
+        </div>
+      </header>
+
+      <section class="app__content">
+        <div id="chat-log" class="chat-log" aria-live="polite"></div>
+        <div id="drop-zone" class="drop-zone" hidden>
+          <p>Dépose tes fichiers ici (PDF, MD, TXT)</p>
+        </div>
+      </section>
+
+      <form id="chat-form" class="chat-form">
+        <textarea
+          id="message-input"
+          placeholder="Pose ta question..."
+          rows="2"
+          required
+        ></textarea>
+        <button type="submit" class="btn">Envoyer</button>
+      </form>
+    </main>
+
+    <template id="message-template">
+      <div class="message">
+        <div class="message__meta">
+          <span class="message__role"></span>
+          <span class="message__time"></span>
+        </div>
+        <div class="message__content"></div>
+      </div>
+    </template>
+
+    <div id="spinner" class="spinner hidden"></div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+langchain
+chromadb
+sentence-transformers
+duckduckgo-search
+python-dotenv
+beautifulsoup4
+requests
+pydantic
+langchain-community
+langchain-core
+pypdf
